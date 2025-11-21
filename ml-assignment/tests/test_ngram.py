@@ -1,5 +1,11 @@
-import pytest
+import sys
+import os
+
+# This forces Python to look in the main folder for 'src'
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from src.ngram_model import TrigramModel
+import pytest
 
 def test_fit_and_generate():
     model = TrigramModel()
